@@ -18,13 +18,13 @@ boxes.forEach((box) => {
 });
 
 let mouseDown = false;
-grid.onmousedown = () => (mouseDown = true);
-grid.onmouseup = () => (mouseDown = false);
+document.body.onmousedown = () => (mouseDown = true);
+document.body.onmouseup = () => (mouseDown = false);
 
 function change(event){
     console.log(mouseDown);
-    if(event.type === 'mouseover' && mouseDown){
-        event.target.style.backgroundColor = "black";
+    if(event.type === 'mouseover' && mouseDown || event.type === 'mousedown'){
+        event.target.style.backgroundColor = "#222";
     }
 }
 
