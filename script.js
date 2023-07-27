@@ -70,7 +70,9 @@ function btnClick(event){
     if(name == "Random"){
         mode = "random";
     }
-    
+    if(name == "Normal"){
+        mode = "normal";
+    }
 }
 
 
