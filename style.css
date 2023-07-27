@@ -90,24 +90,15 @@ main {
     gap: 30px;
 }
 
-
-
-
-
 .buttons{
     transition: background-color 0.2s ease, color 0.2s ease;
 }
-
 
 .buttons:hover {
     background-color: #fff;
     color: #38393d;
 }
   
-
-
-
-
 .buttons:active {
     background-color: #ddd;
     color: #38393d;

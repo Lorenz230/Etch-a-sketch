@@ -28,6 +28,7 @@ let mouseUp = true;
 document.body.onmousedown = () => (mouseDown = true);
 document.body.onmouseup = () => (mouseDown = false);
 let mode = "normal";
+let gridMode = 0;
 
 function change(event){
     if(event.type === 'mouseover' && mouseDown || event.type === 'mousedown'){
@@ -53,16 +54,19 @@ function btnClick(event){
     let name = event.target.textContent;
     let id = event.target.id;
     if(name == "Clear"){
-        setGrid(16);
+        setGrid(gridMode);
     }
     if(id == "32"){
         setGrid(Number(id));
+        gridMode = Number(id);
     }
     if(id == "64"){
         setGrid(Number(id));
+        gridMode = Number(id);
     }
     if(id == "16"){
         setGrid(Number(id));
+        gridMode = Number(id);
     }
     if(name == "Erase"){
         mode = "erase";
