@@ -1,26 +1,26 @@
 const grid = document.querySelector('.grid')
 const buttons = document.querySelectorAll('div .buttons');
 
-for(let i = 0; i < 256; i++){
-    let newDiv = document.createElement('div');
-    newDiv.style.backgroundColor = "white";
-    newDiv.style.height = "40px";
-    newDiv.style.width = "40px";
-    grid.append(newDiv);
-}
+function setGrid(size){
+    grid.innerHTML = '';
+    let height = grid.clientHeight;
+    let gridSize = size*size;
+    let dimensions = `${height/size}px`;
 
-const boxes = document.querySelectorAll(".grid div");
+    for(let i = 0; i < gridSize; i++){
+        let newDiv = document.createElement('div');
+        newDiv.style.backgroundColor = "white";
+        newDiv.style.height = dimensions;
+        newDiv.style.width = dimensions;
+        grid.append(newDiv);
+    }
+    const boxes = document.querySelectorAll(".grid div");
 
-boxes.forEach((box) => {
+    boxes.forEach((box) => {
     box.addEventListener('mousedown', change);
     box.addEventListener('mouseover', change);
 
 });
-
-function clear(){
-    boxes.forEach((box) =>{
-        box.style.backgroundColor = "white";
-    });
 }
 
 let mouseDown = false;
@@ -41,8 +41,15 @@ buttons.forEach((button) =>{
 
 function btnClick(event){
     let name = event.target.textContent;
+    let id = event.target.id;
     if(name == "Clear"){
-        clear();
+        setGrid(2);
+    }
+    if(id == "32"){
+        setGrid(Number(id));
     }
 }
 
+
+
+setGrid(16);
