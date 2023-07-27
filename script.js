@@ -1,11 +1,11 @@
 const grid = document.querySelector('.grid')
+const buttons = document.querySelectorAll('div .buttons');
 
 for(let i = 0; i < 256; i++){
     let newDiv = document.createElement('div');
     newDiv.style.backgroundColor = "white";
-    // newDiv.style.border = '1px solid #e6e3e3';
-    newDiv.style.height = "32px";
-    newDiv.style.width = "32px";
+    newDiv.style.height = "40px";
+    newDiv.style.width = "40px";
     grid.append(newDiv);
 }
 
@@ -17,14 +17,32 @@ boxes.forEach((box) => {
 
 });
 
+function clear(){
+    boxes.forEach((box) =>{
+        box.style.backgroundColor = "white";
+    });
+}
+
 let mouseDown = false;
+let mouseUp = true;
 document.body.onmousedown = () => (mouseDown = true);
 document.body.onmouseup = () => (mouseDown = false);
 
 function change(event){
-    console.log(mouseDown);
     if(event.type === 'mouseover' && mouseDown || event.type === 'mousedown'){
-        event.target.style.backgroundColor = "#222";
+        event.target.style.backgroundColor = "#333";
+    }
+}
+
+buttons.forEach((button) =>{
+    button.addEventListener('click', btnClick);
+
+});
+
+function btnClick(event){
+    let name = event.target.textContent;
+    if(name == "Clear"){
+        clear();
     }
 }
 
