@@ -39,6 +39,7 @@ main {
     margin-top: -150px;
     justify-content: center;
     gap: 120px;
+    
 }
 
 .grid {
@@ -71,4 +72,9 @@ main {
     align-items: center;
     gap: 60px;
     flex-shrink: 0;
+}
+
+.sizes{
+    display: flex;
+    gap: 20px;
 }

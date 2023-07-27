@@ -43,13 +43,17 @@ function btnClick(event){
     let name = event.target.textContent;
     let id = event.target.id;
     if(name == "Clear"){
-        setGrid(2);
+        setGrid(16);
     }
     if(id == "32"){
         setGrid(Number(id));
     }
+    if(id == "64"){
+        setGrid(Number(id));
+    }
+    if(id == "16"){
+        setGrid(Number(id));
+    }
 }
-
-
 
 setGrid(16);
