@@ -38,7 +38,6 @@ body {
 
 main {
     display: flex;
-    margin-top: -150px;
     justify-content: center;
     gap: 45px;
     padding-right: 180px;
