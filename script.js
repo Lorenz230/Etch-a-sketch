@@ -35,6 +35,12 @@ function change(event){
         if(mode == "erase"){
             event.target.style.backgroundColor = "#fff"; 
         }
+        if(mode == "random"){
+            let red = Math.floor(Math.random() * 256);
+            let green = Math.floor(Math.random() * 256);
+            let blue = Math.floor(Math.random() * 256);
+            event.target.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+        }
     }
 }
 
@@ -61,6 +67,10 @@ function btnClick(event){
     if(name == "Erase"){
         mode = "erase";
     }
+    if(name == "Random"){
+        mode = "random";
+    }
+    
 }
 
 
