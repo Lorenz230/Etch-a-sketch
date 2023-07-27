@@ -27,10 +27,14 @@ let mouseDown = false;
 let mouseUp = true;
 document.body.onmousedown = () => (mouseDown = true);
 document.body.onmouseup = () => (mouseDown = false);
+let mode = "normal";
 
 function change(event){
     if(event.type === 'mouseover' && mouseDown || event.type === 'mousedown'){
         event.target.style.backgroundColor = "#333";
+        if(mode == "erase"){
+            event.target.style.backgroundColor = "#fff"; 
+        }
     }
 }
 
@@ -54,6 +58,14 @@ function btnClick(event){
     if(id == "16"){
         setGrid(Number(id));
     }
+    if(name == "Erase"){
+        mode = "erase";
+    }
 }
+
+
+
+
+
 
 setGrid(16);
